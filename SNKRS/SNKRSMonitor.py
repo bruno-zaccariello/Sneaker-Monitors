@@ -8,6 +8,9 @@ import dotenv
 from random_user_agent.user_agent import UserAgent
 from random_user_agent.params import SoftwareName, HardwareType
 from fp.fp import FreeProxy
+import os
+
+WEBHOOK = os.getenv('WEBHOOK')
 
 logging.basicConfig(filename='SNKRSlog.log', filemode='a', format='%(asctime)s - %(name)s - %(message)s', level=logging.DEBUG)
 
@@ -85,7 +88,7 @@ def discord_webhook(title, colour, slug, thumbnail):
     embed["timestamp"] = str(datetime.datetime.utcnow())
     data["embeds"].append(embed)
 
-    result = rq.post(CONFIG['WEBHOOK'], data=json.dumps(data), headers={"Content-Type": "application/json"})
+    result = rq.post(WEBHOOK, data=json.dumps(data), headers={"Content-Type": "application/json"})
 
     try:
         result.raise_for_status()
