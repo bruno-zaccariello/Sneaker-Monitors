@@ -12,8 +12,8 @@ For example, if I want a monitor for Belgium, there are multiple languages to ch
 Looking at the table, I have the choices of ```en-GB```, ```nl```, ```de``` or ```fr```.
 If I then want the monitor to refer to the Belgium site in the French language, I can put the following into the ```.env``` file:
 ```
-LOCATION = "BE"
-LANGUAGE = "fr"
+LOCATION = "BR"
+LANGUAGE = "pt-BR"
 ```
 
 If your country is not found below, it is because Nike use a different set-up.
